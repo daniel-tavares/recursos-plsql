@@ -35,30 +35,30 @@
 
 ## CURSOR, FOR e IF 
 
-DECLARE
-    c_id NUMBER;
-    existe NUMBER;
-    valor NUMBER;
-  CURSOR ARQUIVO_ECF IS
-      SELECT   re.tra_ted ted
-      FROM ecf.tab_ecf_resumo_arquivo re;
-  R_ARQUIVO     ARQUIVO_ECF % rowtype;
+        DECLARE
+            c_id NUMBER;
+            existe NUMBER;
+            valor NUMBER;
+          CURSOR ARQUIVO_ECF IS
+              SELECT   re.tra_ted ted
+              FROM ecf.tab_ecf_resumo_arquivo re;
+          R_ARQUIVO     ARQUIVO_ECF % rowtype;
 
 
-BEGIN
-   existe:=0;
-   valor:=0;
-   FOR i IN 125 ..2000 LOOP
-     FOR R_ARQUIVO IN ARQUIVO_ECF LOOP
-        IF i =R_ARQUIVO.ted THEN
-           existe:=1;
-        END IF ;
-     END LOOP ;
-    IF ( existe =1) THEN
-          existe:=0;
-     ELSE
-        dbms_output.put_line( i );
-     END IF ;
-   END LOOP ;
-END ;
+        BEGIN
+           existe:=0;
+           valor:=0;
+           FOR i IN 125 ..2000 LOOP
+             FOR R_ARQUIVO IN ARQUIVO_ECF LOOP
+                IF i =R_ARQUIVO.ted THEN
+                   existe:=1;
+                END IF ;
+             END LOOP ;
+            IF ( existe =1) THEN
+                  existe:=0;
+             ELSE
+                dbms_output.put_line( i );
+             END IF ;
+           END LOOP ;
+        END ;
 
