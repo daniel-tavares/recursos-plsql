@@ -1,4 +1,9 @@
-# recursos-plsql
+# RESTORE OTIMIZADO POSTGRESQL
+
+/opt/PostgreSQL/10/bin/pg_restore --host localhost --port 5434 --username exmart   --role exmart -j 4 --dbname rtdpjlite_test /u01/bkp/sp_2osasco.bkp
+
+
+# PLSL
 
 ## EXCLUIR TODAS AS TABELAS
 
